@@ -1,0 +1,1 @@
+E:\University\TUMunich\4h Semeter\IDP\WoundManagementUnity\WoundManagement\WindowsStoreApp\HololensQrCodeReader\WoundDocumentationManagement.csproj;x86
