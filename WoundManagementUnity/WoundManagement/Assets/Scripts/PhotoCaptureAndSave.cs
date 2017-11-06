@@ -13,7 +13,7 @@ public class PhotoCaptureAndSave : MonoBehaviour {
 	PhotoCapture photoCaptureObject = null;
 	string filename;
 
-	string serverUrl = "http://192.168.36.1:3000";
+	public string serverUrl = "http://192.168.36.1:3000";
 	public AudioClip captureAudioClip;
 	public AudioClip failedAudioClip;
 
@@ -93,8 +93,6 @@ public class PhotoCaptureAndSave : MonoBehaviour {
 		{
 			Debug.Log("Saved Photo to disk!");
 			captureAudioSource.Play();
-			//StartCoroutine (PostToServer());
-			//StartCoroutine (GetText());
 			StartCoroutine (UploadSample());
 			photoCaptureObject.StopPhotoModeAsync(OnStoppedPhotoMode);
 		}
@@ -141,34 +139,4 @@ public class PhotoCaptureAndSave : MonoBehaviour {
 			print("Finished Uploading Screenshot");
 		}
 	}
-	/*
-	IEnumerator PostToServer(){
-		List<IMultipartFormSection> formData = new List<IMultipartFormSection> ();
-		formData.Add( new MultipartFormDataSection("img", filename));
-
-		UnityWebRequest www = UnityWebRequest.Post (serverUrl+"/wounds", formData);
-		yield return www.Send ();
-
-		if (www.isError) {
-			Debug.Log (www.error + " to the url: " + www.url);
-		} else {
-			// TODO delete image if sent
-			Debug.Log ("Form posted to: " + serverUrl);
-		}
-	}
-	IEnumerator GetText() {
-		UnityWebRequest www = UnityWebRequest.Get("https://jsonplaceholder.typicode.com/users");
-		yield return www.Send();
-
-		if(www.isError) {
-			Debug.Log(www.error + " to the url: " + www.url);
-		}
-		else {
-			// Show results as text
-			Debug.Log(www.downloadHandler.text);
-
-			// Or retrieve results as binary data
-			byte[] results = www.downloadHandler.data;
-		}
-	}*/
 }

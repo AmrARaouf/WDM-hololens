@@ -319,6 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f552d033417b8d4da1685d59f2857a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serverUrl: http://192.168.36.1:3000
   captureAudioClip: {fileID: 8300000, guid: ba28a003ab4b104408a1b00137597a12, type: 3}
   failedAudioClip: {fileID: 8300000, guid: c6602802d37812a41816cd4c7a08ff66, type: 3}
 --- !u!114 &351547296
